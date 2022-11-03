@@ -4,7 +4,18 @@ wochae
 ```
 nheo
 ```py
-// code
+def solution(arr):
+    answer = 1
+    nums = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+    for i in arr:
+        tmp = i
+        for j in nums:
+            if answer % j == 0 and i % j == 0:
+                while answer % j == 0 and i % j == 0:
+                    i /= j
+                    answer /= j
+        answer *= tmp
+    return answer
 ```
 donghyuk
 ```py
